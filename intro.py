@@ -80,13 +80,26 @@ help(print)
 # hacker rank is the best 
 
 
+#format print
+percentage = 98.765432
 
+print('%.2f' % percentage)
+print ('{:.2f}'.format(percentage))
 
+#split and join
+def split_and_join(line):
+    # write your code here
+    #input is "this is my life"
+    ar = line.split()
+    return ("-".join(ar)) 
+#output is "this-is-my-life"
 
-
-
-
-
+#Read a given string, change the character at a given index and then print the modified string.
+def mutate_string(string, position, character):
+    snew = list(string)
+    snew[position] = character
+    snew = "".join(snew)
+    return snew
 
 
 
