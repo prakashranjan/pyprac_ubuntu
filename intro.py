@@ -101,5 +101,22 @@ def mutate_string(string, position, character):
     snew = "".join(snew)
     return snew
 
-
+#formating is the king
+'''
+learn new formating syntax 
+'''
+def print_formatted(number):
+    # your code goes here
+    for i in range(1,number+1,1):
+        xb = str(bin(number))[2:]
+        xblen= len(xb)
+        
+        print ("{:{x}}".format(int(i),x=xblen) ,end=" ")
+        print ("{:{x}}".format(int((oct(i))[2:]), x=xblen) ,end=" ")
+        print ("{:{x}X}".format(i, x=xblen) ,end=" ")
+        print ("{:{x}}".format(int(str(bin(i))[2:]), x= xblen) )
+        
+        
+        
+        
 
