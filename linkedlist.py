@@ -70,6 +70,19 @@ class linkedlist():
 
             k = k.next
         print("before node not found")
+    
+    def lreverse(self):
+        k = self.head
+        prev = None
+        while k:
+            l = k.next
+            k.next = prev
+            prev = k
+            k = l
+        self.head = prev
+
+
+    
 
 
 
@@ -83,20 +96,26 @@ mylist = linkedlist()
 x = "y"
 while x == "y":
     print("\n--------------------------------------------------\n")
-    print("1. append\n2. prepend\n3. remove\n4. insertafter")
+    print("1. append\n2. prepend\n3. remove\n4. insertafter\n5. reverse")
     print("\n--------------------------------------------------\n")
     z = int(input())
-    nd = str(input())
+    
     if z == 1:
+        nd = str(input())
         mylist.lappend(nd)
     elif z == 2:
+        nd = str(input())
         mylist.lprepend(nd)
     elif z == 3:
+        nd = str(input())
         mylist.lremove(nd)
     elif z == 4:
-        print("after : ")
+        nd = str(input())
+        print("after :",end =" ")
         after = str(input())
         mylist.inafter(after,nd)
+    elif z == 5:
+        mylist.lreverse()
 
     mylist.display()
     print("\nback to menu enter y")
