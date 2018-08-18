@@ -21,12 +21,17 @@ class Graph():
         # Recur for all neighbours
         # if any neighbour is visited and in 
         # recStack then graph is cyclic
+        count = 0
         for neighbour in self.graph[v]:
+            count +=1
             if visited[neighbour] == False:
                 if self.isCyclicUtil(neighbour, visited, recStack) == True:
+                    print (count)
                     return True
             elif recStack[neighbour] == True:
+                print (count)
                 return True
+        print (count)
  
         # The node needs to be poped from 
         # recursion stack before function ends
@@ -34,17 +39,26 @@ class Graph():
         return False
  
     # Returns true if graph is cyclic else false
-    count = 0
+    
     def isCyclic(self):
-        count = 0
+        
         visited = [False] * self.V
         recStack = [False] * self.V
         for node in range(self.V):
             if visited[node] == False:
                 if self.isCyclicUtil(node,visited,recStack) == True:
-                    count+=1
                     return True
         return False
+
+    def countCyclic(self):
+        cycles = {}
+        visited = [False] * self.V
+        recStack = [False] * self.V
+        for node in range(self.V):
+            if visited[node] == False:
+                if self.isCyclicUtil(node,visited,recStack) == True:
+                    cycles[node] = 1
+        print(cycles)
  
 g = Graph(4)
 g.addEdge(0, 1)
@@ -57,5 +71,7 @@ if g.isCyclic() == 1:
     print ("Graph has a cycle")
 else:
     print ("Graph has no cycle")
+
+g.countCyclic()
  
 

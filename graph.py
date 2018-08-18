@@ -30,6 +30,9 @@ class graph:
                     temp.append({vrtx , evrtx})
         return temp
 
+    '''
+    wirte code to find max-min degree '''
+
 g = graph()
 g.addvrtx("a")
 g.addvrtx("b")
